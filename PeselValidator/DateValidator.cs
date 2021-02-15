@@ -31,7 +31,7 @@
         /// <param name="month"></param>
         /// <param name="day"></param>
         /// <returns>True if given date is valid.</returns>
-        public bool IsDateValid(int year, int month, int day)
+        public static bool IsDateValid(int year, int month, int day)
         {
             return ValidateYear(year) && ValidateMonth(month) && ValidateDay(year, month, day);
         }
@@ -41,7 +41,7 @@
         /// </summary>
         /// <param name="year"></param>
         /// <returns>True if given year is in the valid range.</returns>
-        private bool ValidateYear(int year)
+        private static bool ValidateYear(int year)
         {
             return year >= MinValidYear && year <= MaxValidYear;
         }
@@ -51,7 +51,7 @@
         /// </summary>
         /// <param name="month"></param>
         /// <returns>True if given month is in valid range.</returns>
-        private bool ValidateMonth(int month)
+        private static bool ValidateMonth(int month)
         {
             return month >= 1 && month <= 12;
         }
@@ -63,7 +63,7 @@
         /// <param name="month"></param>
         /// <param name="day"></param>
         /// <returns>True if given day is in the valid range.</returns>
-        private bool ValidateDay(int year, int month, int day)
+        private static bool ValidateDay(int year, int month, int day)
         {
             if (day < 1 || day > 31)
                 return false;
@@ -88,7 +88,7 @@
         /// </summary>
         /// <param name="year"></param>
         /// <returns>True if year is a leap year.</returns>
-        private bool IsLeapYear(int year)
+        private static bool IsLeapYear(int year)
         {
             return (((year % 4 == 0) && (year % 100 != 0)) || 
                     (year % 400 == 0));
